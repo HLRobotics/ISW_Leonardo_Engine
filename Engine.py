@@ -27,14 +27,14 @@ def Edge_Generator(DIR_PATH):
         print('[ ISW Engine:Writing to Edge '+filename+']')
     return(True)
     
-def Image_to_Video(IMAGE_DIR):
+def Image_to_Video(IMAGE_DIR,NAME):
     img_array = []
     for filename in glob.glob(IMAGE_DIR+'/*.jpg'):
         img = cv2.imread(filename)
         height, width, layers = img.shape
         size = (width,height)
         img_array.append(img) 
-    out = cv2.VideoWriter('OUTPUT.avi',cv2.VideoWriter_fourcc(*'DIVX'), 0.5, size)    
+    out = cv2.VideoWriter(NAME+'_OUTPUT.avi',cv2.VideoWriter_fourcc(*'DIVX'), 0.5, size)    
     for i in range(len(img_array)):
         out.write(img_array[i])
         print("[ ISW ENGINE GENERATING VIDEO ..... ]")
