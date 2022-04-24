@@ -164,7 +164,7 @@ def Crack_Detection(DIR_PATH):
     return True
 
 def Mark(DIR_PATH):
-    for filename in glob.glob('DIR_PATH/*.jpg'):   
+    for filename in glob.glob(DIR_PATH+'/*.jpg'):   
         Status=False
         fontScale = 1
         font = cv2.FONT_HERSHEY_SIMPLEX
